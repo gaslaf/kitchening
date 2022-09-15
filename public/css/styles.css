@@ -16,7 +16,6 @@ body{
 
 /*  header */
 header {
-    text-align: center;
     margin-bottom: 30px;
 }
 header img {
@@ -28,16 +27,18 @@ header img {
 }
 
 header a.burger{
-    display: inline-block;
+    display: block;
     width: 35px;
     background-color: gray;
     color: white;
     padding: 8px;
     border-radius: 4px;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
+    text-align: center;
 }
 
 header nav ul li{
+    text-align: center;
     width: 100%;
     background-color: #63645d;
     margin: 2px;
@@ -52,7 +53,7 @@ header nav ul li a{
 
 /* main /*/
 
-.banner{
+.banner img{
     display: none;
 }
 article{
@@ -114,4 +115,54 @@ footer nav ul li a{
     text-transform: uppercase;
     font-family: sans-serif;
     padding: 10px;
+}
+/* TABLET*/
+@media (min-width: 481px){
+    header a.burger{
+        display: none;
+    }
+    header nav ul li{
+        width: 15%;
+        margin-right: 0.60%;
+        display: inline-block;
+        font-size: 0.53rem;
+    }
+    header nav ul li:last-child{
+        margin-right: none;
+    }
+    .banner img{
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    article{
+        width: 45%;
+        margin: 1%;
+        display: inline-block;
+    }
+}
+
+@media (min-width:769px){
+    header nav ul li{
+        font-size: 1rem;
+    }
+    article{
+        width: 30%;
+        margin-right: 2%;
+    }
+    footer{
+        background-color: red;
+        height: 200px;
+        padding: 80px 0;
+        border-radius: 30px 30px 0 0;
+    }
+    footer nav ul li{
+        display: inline;
+        background-color: transparent;
+        margin-bottom: 1px;
+        margin-right: 1px solid white;
+    }
+    footer nav ul li:last-child{
+        border-right: none;
+    }
 }
