@@ -118,28 +118,32 @@ footer nav ul li a{
 }
 /* TABLET*/
 @media (min-width: 481px){
+    header nav ul{
+        display: flex;
+        justify-content: space-between;
+    }
     header a.burger{
         display: none;
     }
     header nav ul li{
-        width: 15%;
-        margin-right: 0.60%;
-        display: inline-block;
-        font-size: 0.53rem;
-    }
-    header nav ul li:last-child{
-        margin-right: none;
+        font-size: 0.66rem;
     }
     .banner img{
         display: block;
         width: 100%;
         margin-bottom: 20px;
     }
+    .products{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;    
+    }
     article{
-        width: 45%;
+        width: 40%;
         margin: 1%;
         display: inline-block;
     }
+
 }
 
 @media (min-width:769px){
@@ -153,16 +157,15 @@ footer nav ul li a{
     footer{
         background-color: red;
         height: 200px;
-        padding: 80px 0;
         border-radius: 30px 30px 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     footer nav ul li{
         display: inline;
         background-color: transparent;
         margin-bottom: 1px;
         margin-right: 1px solid white;
-    }
-    footer nav ul li:last-child{
-        border-right: none;
     }
 }
