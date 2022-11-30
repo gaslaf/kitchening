@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <%- include('./partials/head')  %> 
+  <body>
+    <%- include('./partials/header')  %> 
+<main class="container">
+    <div class="row">
+        <div class="col-12 col-md-8 mx-auto mt-5">
+            <div class="card">
+                <div class="header">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                          <label for="nombre" class="form-label">Nombre</label>
+                          <input type="text" name="nombre" value="<%= locals.old && old.nombre ? old.nombre : null %>" class="form-control <%= locals.errors && errors.nombre ? 'is-invalid': locals.old && old.nombre ? 'is-valid' : null   %>  " id="nombre">
+                        <span class="text-danger small"><%= locals.errors && errors.nombre ? errors.nombre.msg : null%> </span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripcion</label>
+                            <textarea type="text" name="descripcion" class="form-control <%= locals.errors && errors.descripcion ? 'is-invalid' : locals.old && old.descripcion ? 'is-valid' : null   %>  " id="descripcion"><%= locals.old && old.descripcion ? old.descripcion : null %></textarea>
+                            <span class="text-danger small"><%= locals.errors && errors.descripcion ? errors.descripcion.msg : null%> </span>
+                        </div>
+
+                        <div class="mb-3">
+                            <select id="categoria" name="categoria" class="form-select <%= locals.errors && errors.categoria ? 'is-invalid' : locals.old && old.categoria ? 'is-valid' : null   %>  ">
+                              <option selected hidden value="">Categoria</option>
+                              <% categories.forEach(category => { %>
+                                <option value="<%= category %>" <%= locals.old && old.categoria === category ? 'selected' : null %> ><%= category %></option>
+                                <% }) %>
+                            </select>
+                            <span class="text-danger small"><%= locals.errors && errors.categoria ? errors.categoria.msg : null%> </span>
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <input type="file" name="imagen" class="form-control <%= locals.errors && errors.imagen ? 'is-invalid' : null   %>  " id="imagen">
+                            <span class="text-danger small"><% locals.errors && errors.imagen ? errors.msg : null%> </span>
+                          </div>
+                        <button type="submit" class="btn btn-primary">Agregar</button>
+                      </form>
+                </div>
+                <div class="body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</main>    
+    <%- include('./partials/footer')  %> 
+    <%- include('./partials/scripts')  %> 
+  </body>
+</html>
